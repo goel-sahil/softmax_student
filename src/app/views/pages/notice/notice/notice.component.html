@@ -1,0 +1,38 @@
+<kt-portlet>
+    <!-- PORTLET LOADING | Binded to TABLE Datasource -->
+    <!-- See prop => '~/core/_crud/models/data-sources/_base.datasource.ts' (loading$) -->
+    <kt-portlet-header [title]="'Homework'" [class]="'kt-portlet__head--lg'">
+    </kt-portlet-header>
+    <!-- end::Header -->
+
+    <!-- start::Body (attribute: ktPortletBody) -->
+    <kt-portlet-body>
+        <div class="mat-table__wrapper">
+            <mat-table [dataSource]="dataSource">
+                <ng-container matColumnDef="sr_no">
+                    <mat-header-cell *matHeaderCellDef> Sr. No</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="notice">
+                    <mat-header-cell *matHeaderCellDef> Notice</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="created_at">
+                    <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.created_at | date: "yyyy-MM-dd hh:mm a"}}
+                    </mat-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+            <mat-paginator #paginator [length]="pageData.total" [pageSize]="pageData.per_page"
+                (page)="onPageChange($event)">
+            </mat-paginator>
+            <div class="mat-table__message" *ngIf="!dataSource.data.length">No records found</div>
+        </div>
+        <!-- end: BOTTOM -->
+    </kt-portlet-body>
+    <!-- end::Body -->
+</kt-portlet>
