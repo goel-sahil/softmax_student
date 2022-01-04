@@ -4,14 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 // Components
 import { BaseComponent } from './views/theme/base/base.component';
 // Auth
-import { AuthGuard } from './core/auth';
+import { UserAuthGuard } from './_helpers/auth.guard';
+import { ProfileComponent } from './views/pages/profile/profile.component';
 
 const routes: Routes = [
 	{ path: '', loadChildren: () => import('app/views/pages/auth/auth.module').then(m => m.AuthModule) },
 	{
 		path: '',
 		component: BaseComponent,
-		canActivate: [AuthGuard],
+		canActivate: [UserAuthGuard],
 		children: [
 			{
 				path: 'dashboard',
@@ -24,6 +25,10 @@ const routes: Routes = [
 			{
 				path: 'homework',
 				loadChildren: () => import('./views/pages/homework/homework.module').then(m => m.HomeworkModule)
+			},
+			{
+				path: 'profile',
+				component: ProfileComponent,
 			},
 		]
 	},

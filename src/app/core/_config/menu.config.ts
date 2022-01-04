@@ -24,6 +24,13 @@ export class MenuConfig {
 					page: '/homework',
 					translate: 'Homework',
 				},
+				{
+					title: 'Profile',
+					root: true,
+					alignment: 'left',
+					page: '/profile',
+					translate: 'Profile',
+				},
 				// {
 				// 	title: 'Components',
 				// 	root: true,

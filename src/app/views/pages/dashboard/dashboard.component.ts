@@ -1,5 +1,6 @@
 // Angular
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'kt-dashboard',
@@ -8,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-	constructor() {
+	constructor(private router: Router) {
 	}
 
 	ngOnInit(): void {
+	}
+
+	redirectToList(param) {
+		// console.log(param, "cfghj")
+		this.router.navigate(['/' + param]);
 	}
 }

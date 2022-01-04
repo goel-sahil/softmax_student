@@ -9,9 +9,10 @@ import { PartialsModule } from '../partials/partials.module';
 import { CoreModule } from '../../core/core.module';
 import { NoticeModule } from './notice/notice.module';
 import { HomeworkModule } from './homework/homework.module';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
-	declarations: [],
+	declarations: [ProfileComponent],
 	exports: [],
 	imports: [
 		CommonModule,

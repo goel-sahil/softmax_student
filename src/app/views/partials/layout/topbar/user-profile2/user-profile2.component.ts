@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class UserProfile2Component implements OnInit {
 	// Public properties
 	user;
-
+	public defaultImg = "/assets/media/users/default.jpg"
 	@Input() avatar = true;
 	@Input() greeting = true;
 	@Input() badge: boolean;

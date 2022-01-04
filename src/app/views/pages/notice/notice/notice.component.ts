@@ -48,5 +48,8 @@ export class NoticeComponent implements OnInit {
       console.log(error);
     });
   }
-
+  onPageChange(event) {
+    let page = event.pageIndex + 1;
+    this.getNotices(page);
+  }
 }
