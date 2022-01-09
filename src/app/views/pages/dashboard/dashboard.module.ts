@@ -6,12 +6,14 @@ import { CommonModule } from '@angular/common';
 import { CoreModule } from '../../../core/core.module';
 import { PartialsModule } from '../../partials/partials.module';
 import { DashboardComponent } from './dashboard.component';
+import { MatSnackBarModule } from '@angular/material';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		PartialsModule,
 		CoreModule,
+		MatSnackBarModule,
 		RouterModule.forChild([
 			{
 				path: '',
