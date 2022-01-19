@@ -11,8 +11,8 @@ import { DashboardService } from './dashboard.service';
 	styleUrls: ['dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-	readonly VAPID_PUBLIC_KEY = "BFf20_7Xm3c1-wF41c_TQzxSuiBEnweT4cpZhhiWGx7hEEgl6YcRsQn6b7Lh3-Ilp1VzatYXJbsLu7QAgXLKRVI";
-	;
+	readonly VAPID_PUBLIC_KEY = "BAXyjXJZlH_pE8kWmcpd5eJZHi6sKuHNJ2x3fhlBhUHY2zoYKFOxehFJrYxAeH9CUeUYLwJEUFTNcdHNRO40iBs";
+
 	public user;
 
 	constructor(
