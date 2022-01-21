@@ -13,7 +13,7 @@ export class NoticeComponent implements OnInit {
   constructor(private noticeService: NoticeService, private router: Router) { }
   dataSource = new MatTableDataSource<[]>();
   displayedColumns: string[] = [
-    'sr_no', 'notice', 'created_at',
+    'notice', 'created_at',
   ];
   pageData = {
     current_page: 0,
