@@ -11,8 +11,7 @@ import { DashboardService } from './dashboard.service';
 	styleUrls: ['dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-	readonly VAPID_PUBLIC_KEY = "BFf20_7Xm3c1-wF41c_TQzxSuiBEnweT4cpZhhiWGx7hEEgl6YcRsQn6b7Lh3-Ilp1VzatYXJbsLu7QAgXLKRVI";
-	;
+	readonly VAPID_PUBLIC_KEY = "BNbSRx1Fp5Bgp_qR-QZ0ETCYi_AS4mRlm98xvbPlb9v0LgVCFHi8qihcyr23jscKFSlitPyKVqjSMmmUoGZRZ2k";
 	public user;
 
 	constructor(
@@ -26,9 +25,9 @@ export class DashboardComponent implements OnInit {
 	ngOnInit(): void {
 		this.user = JSON.parse(localStorage.getItem('user'));
 		// User does not enabled notifications?
-		if (!this.user.notifications_enabled) {
-			this.subscribeToNotifications();
-		}
+		// if (!this.user.notifications_enabled) {
+		this.subscribeToNotifications();
+		// }
 	}
 
 	redirectToList(param) {
@@ -41,15 +40,15 @@ export class DashboardComponent implements OnInit {
 		})
 			.then(sub => {
 				this.dashboardService.enableNotifications(sub).subscribe((response: any) => {
-					this.user.notifications_enabled = 1;
-					localStorage.setItem('user', JSON.stringify(this.user));
-					this._snackBar.open(response.message, 'X');
+					// this.user.notifications_enabled = 1;
+					// localStorage.setItem('user', JSON.stringify(this.user));
+					// this._snackBar.open(response.message, 'X');
 				}, (error) => {
 					this._snackBar.open(error.error.message, 'X');
 				});
 			})
 			.catch((err) => {
-				console.error("Could not subscribe to notifications", err)
+				// console.error("Could not subscribe to notifications", err)
 				this._snackBar.open(err, 'X');
 			});
 	}
